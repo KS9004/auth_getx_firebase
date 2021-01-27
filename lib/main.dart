@@ -1,3 +1,4 @@
+import 'package:auth_getx_firebase/view/sign_in.dart';
 import 'package:auth_getx_firebase/view/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Authenticaion',
-      home: SignUp(),
+      home: SignIn(),
 
     );
   }
