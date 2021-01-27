@@ -1,3 +1,4 @@
+import 'package:auth_getx_firebase/view/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -121,7 +122,7 @@ class SignUp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15.0)
                           ),
                           child: MaterialButton(
-                            onPressed: null,
+                            onPressed: ()=>Get.to(SignIn()),
                             child: Text("Next",style:GoogleFonts.aBeeZee(
                              textStyle: TextStyle(
                                   color: Colors.white,
