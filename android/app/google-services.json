@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "964453671300",
+    "project_id": "authenticationgetx",
+    "storage_bucket": "authenticationgetx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964453671300:android:7eb586afe3db00e23cfdd1",
+        "android_client_info": {
+          "package_name": "com.ks9004.auth_getx_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964453671300-bqmc2aav9ij783cgn8kp9560aniluor0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoJo2GTrXKZ-hG-mSv6oh-swr3_Q_pBJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964453671300-bqmc2aav9ij783cgn8kp9560aniluor0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

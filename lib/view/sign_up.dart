@@ -1,10 +1,14 @@
+import 'package:auth_getx_firebase/controller/auth_controller.dart';
 import 'package:auth_getx_firebase/view/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends GetWidget<AuthController> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +48,7 @@ class SignUp extends StatelessWidget {
                         ),
                         SizedBox(height: 5.0,),
                         TextFormField(
+                          controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             fillColor: Color(0xffFEF3F1),
@@ -70,6 +75,7 @@ class SignUp extends StatelessWidget {
                         ),
                         SizedBox(height: 5.0,),
                         TextFormField(
+                          controller: passwordController,
                           keyboardType: TextInputType.visiblePassword,
                           decoration: InputDecoration(
                             fillColor: Color(0xffFEF3F1),
@@ -97,6 +103,7 @@ class SignUp extends StatelessWidget {
                         ),
                         SizedBox(height: 5.0,),
                         TextFormField(
+                          controller: phoneController,
                           keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
                             fillColor: Color(0xffFEF3F1),
@@ -122,7 +129,10 @@ class SignUp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15.0)
                           ),
                           child: MaterialButton(
-                            onPressed: ()=>Get.to(SignIn()),
+                            onPressed: (){
+                              controller.createUser(emailController.text, passwordController.text);
+                              Get.to(SignIn());
+                            },
                             child: Text("Next",style:GoogleFonts.aBeeZee(
                              textStyle: TextStyle(
                                   color: Colors.white,
@@ -132,6 +142,25 @@ class SignUp extends StatelessWidget {
                             ),
                           ),
                         ),
+                        SizedBox(height: 20.0,),
+                        Row(children: [
+                          Text("Already member login here",style:GoogleFonts.aBeeZee(
+                            textStyle: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15.0
+                            ),),
+                          ),
+                          FlatButton(onPressed: ()=>Get.to(SignUp()),
+                            child: Text("Log In",style:GoogleFonts.aBeeZee(
+                              textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 19.0,
+                                  fontWeight: FontWeight.bold
+                              ),),
+                            ),
+                          ),
+                        ],
+                        )
                       ],
                     ),
                   ),

@@ -1,9 +1,13 @@
+import 'package:auth_getx_firebase/controller/auth_controller.dart';
+import 'package:auth_getx_firebase/view/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends GetWidget<AuthController> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +47,7 @@ class SignIn extends StatelessWidget {
                           ),
                           SizedBox(height: 5.0,),
                           TextFormField(
+                            controller: emailController,
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
                               fillColor: Color(0xffFEF3F1),
@@ -69,6 +74,7 @@ class SignIn extends StatelessWidget {
                           ),
                           SizedBox(height: 5.0,),
                           TextFormField(
+                            controller: passwordController,
                             keyboardType: TextInputType.visiblePassword,
                             decoration: InputDecoration(
                               fillColor: Color(0xffFEF3F1),
@@ -96,7 +102,10 @@ class SignIn extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(15.0)
                             ),
                             child: MaterialButton(
-                              onPressed: null,
+                              onPressed: (){
+                                controller.signInUser(emailController.text, passwordController.text);
+                                print("login success");
+                              },
                               child: Text("Log In",style:GoogleFonts.aBeeZee(
                                 textStyle: TextStyle(
                                     color: Colors.white,
@@ -106,6 +115,25 @@ class SignIn extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(height: 20.0,),
+                          Row(children: [
+                            Text("Please register here",style:GoogleFonts.aBeeZee(
+                              textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15.0
+                              ),),
+                            ),
+                            FlatButton(onPressed: ()=>Get.to(SignUp()),
+                              child: Text("Sign Up",style:GoogleFonts.aBeeZee(
+                              textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 19.0,
+                                fontWeight: FontWeight.bold
+                              ),),
+                            ),
+                            ),
+                            ],
+                          )
                         ],
                       ),
                     ),
