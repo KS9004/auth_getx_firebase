@@ -16,7 +16,7 @@ class AuthController extends GetxController{
    try{
     await _auth.signInWithEmailAndPassword(email: email, password: password);
    }catch(e){
-     Get.snackbar("Errro while login", e.message,snackPosition: SnackPosition.BOTTOM);
+     Get.snackbar("Error while login", e.message,snackPosition: SnackPosition.BOTTOM);
    }
 
  }

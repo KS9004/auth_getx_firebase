@@ -150,7 +150,7 @@ class SignUp extends GetWidget<AuthController> {
                                 fontSize: 15.0
                             ),),
                           ),
-                          FlatButton(onPressed: ()=>Get.to(SignUp()),
+                          FlatButton(onPressed: ()=>Get.to(SignIn()),
                             child: Text("Log In",style:GoogleFonts.aBeeZee(
                               textStyle: TextStyle(
                                   color: Colors.black,
