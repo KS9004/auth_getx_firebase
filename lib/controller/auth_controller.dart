@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthController extends GetxController{
   FirebaseAuth _auth = FirebaseAuth.instance;
-
+                                                                                cv
  void createUser(String email, String password)async{
    try{
     await _auth.createUserWithEmailAndPassword(email: email, password: password);
